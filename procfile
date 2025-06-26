@@ -1,1 +1,1 @@
-gunicorn lokstackback.wsgi:application
+web: gunicorn lokstackback.wsgi:application
