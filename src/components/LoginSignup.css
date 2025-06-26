@@ -1,0 +1,110 @@
+.login-page {
+  min-height: 100vh;
+  background-color: #08031d;
+  display: flex;
+  margin-top: 2%;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.login-box {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 40px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 0 20px #9d00ff55;
+  text-align: center;
+  color: #ffffff;
+}
+
+.login-box h1 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: #67e8f9;
+}
+
+.login-box p {
+  font-size: 16px;
+  margin-bottom: 25px;
+  color: #d1d5db;
+}
+
+.input-field {
+  width: 100%;
+  padding: 12px 15px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 8px;
+  background-color: #1f1a38;
+  color: #fff;
+  font-size: 15px;
+}
+
+.glow-btn {
+  background-color: #9d00ff;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  width: 100%;
+  box-shadow: 0 0 10px #9d00ff80, 0 0 20px #9d00ff60;
+}
+
+.glow-btn:hover {
+  background-color: #b43aff;
+  box-shadow: 0 0 15px #9d00ffcc, 0 0 25px #9d00ffaa;
+}
+
+.toggle-text {
+  margin-top: 15px;
+  color: #aaa;
+  font-size: 14px;
+}
+
+.toggle-text span {
+  color: #67e8f9;
+  cursor: pointer;
+  font-weight: bold;
+}
+.captcha-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #1f1a38;
+  padding: 10px 15px;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.captcha-text {
+  font-size: 20px;
+  letter-spacing: 5px;
+  color: #67e8f9;
+  font-weight: bold;
+}
+
+.captcha-refresh {
+  background: none;
+  border: none;
+  color: #67e8f9;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.error-msg {
+  color: #ff6b6b;
+  font-size: 14px;
+  margin: 10px 0;
+}
+
+.forgot-text {
+  margin-top: 10px;
+  font-size: 14px;
+}
