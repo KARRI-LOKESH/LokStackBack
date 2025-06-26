@@ -27,7 +27,8 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
-    'lokstackback.onrender.com',  # <-- add this line
+    'lokstackback.onrender.com', 
+    'lok-stack.vercel.app',# <-- add this line
 ]
 
 
@@ -58,7 +59,7 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173",
+    "https://lok-stack.vercel.app/",
 ]
 
 ROOT_URLCONF = 'lokstackback.urls'
