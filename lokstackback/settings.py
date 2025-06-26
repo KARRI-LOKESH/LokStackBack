@@ -59,7 +59,7 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    "https://lok-stack.vercel.app/",
+    "https://lok-stack.vercel.app/",  
 ]
 
 ROOT_URLCONF = 'lokstackback.urls'
