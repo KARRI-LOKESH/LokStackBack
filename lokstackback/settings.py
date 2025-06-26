@@ -24,7 +24,11 @@ SECRET_KEY = 'django-insecure-4vm0%dcdndl$w#1&k3lz2kct+_k*m)hi67^+u5zx$%--ffpn_5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+    'lokstackback.onrender.com',  # <-- add this line
+]
 
 
 # Application definition
