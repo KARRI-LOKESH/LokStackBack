@@ -1,0 +1,1 @@
+web: gunicorn lokstackback.wsgi --log-file -
