@@ -24,18 +24,26 @@ def contact_view(request):
 @csrf_exempt
 def signup_view(request):
     if request.method == "POST":
-        data = json.loads(request.body)
-        full_name = data.get("full_name", "")
-        email = data.get("email", "")
-        password = data.get("password", "")
+        try:
+            data = json.loads(request.body)
+            full_name = data.get("full_name", "").strip()
+            email = data.get("email", "").strip()
+            password = data.get("password", "").strip()
+        except Exception:
+            return JsonResponse({"error": "Invalid JSON"}, status=400)
 
-        if not email or not password or not full_name:
+        if not full_name or not email or not password:
             return JsonResponse({"error": "Missing fields"}, status=400)
 
         if User.objects.filter(email=email).exists():
             return JsonResponse({"error": "Email already registered"}, status=400)
 
-        user = User.objects.create_user(username=email, email=email, password=password, first_name=full_name)
+        user = User.objects.create_user(
+            username=email,
+            email=email,
+            password=password,
+            first_name=full_name,
+        )
         user.save()
 
         return JsonResponse({"message": "User registered successfully"})
@@ -46,25 +54,30 @@ def signup_view(request):
 @csrf_exempt
 def login_view(request):
     if request.method == "POST":
-        data = json.loads(request.body)
-        email = data.get("email", "")
-        password = data.get("password", "")
+        try:
+            data = json.loads(request.body)
+            email = data.get("email", "").strip()
+            password = data.get("password", "").strip()
+        except Exception:
+            return JsonResponse({"error": "Invalid JSON"}, status=400)
 
         if not email or not password:
             return JsonResponse({"error": "Missing email or password"}, status=400)
 
         user = authenticate(username=email, password=password)
         if user is not None:
-            login(request, user)  # create session
+            login(request, user)  # Create session
             return JsonResponse({"message": "Login successful"})
         else:
             return JsonResponse({"error": "Invalid credentials"}, status=401)
 
     return JsonResponse({"error": "Invalid method"}, status=405)
+
+
 @csrf_exempt
 def logout_view(request):
     if request.method == "POST":
-        request.session.flush()  # Clear the session
+        request.session.flush()  # Clear session and logout user
         return JsonResponse({"message": "Logged out successfully"})
     else:
         return JsonResponse({"error": "Only POST allowed"}, status=405)
